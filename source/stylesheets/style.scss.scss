@@ -28,6 +28,23 @@
     font-size: 144px;
     margin: 0;
   }
+
+  @include mobile(800px) {
+    background-position: 240px 40%, center center;
+
+    h1 {
+      font-size: 72px;
+    }
+  }
+
+  @include mobile(430px) {
+    padding: 50px 20px;
+    background-position: 170px 40%, center center;
+
+    h1 {
+      font-size: 55px;
+    }
+  }
 }
 
 article {
