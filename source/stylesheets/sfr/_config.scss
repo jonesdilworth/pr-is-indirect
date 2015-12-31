@@ -1,0 +1,44 @@
+// Default Style Configuration
+
+//
+// Colors
+//
+
+// Default: #fcfcfc
+$white: #fcfcfc !default;
+
+// Default: SFR Red
+$primary-color: #EF3E40 !default;
+
+//
+// Typography
+//
+
+// Default: "Avenir Next", Avenir, $helvetica
+$font-family: proxima-nova, "Proxima Nova", $helvetica !default;
+
+//
+// Layout & grid
+//
+
+$mobile-breakpoint: 568px !default;
+$container-max-width: 1100px !default;
+$container-min-width: 300px !default;
+
+// Default: 30px
+$baseline: 30px !default;
+
+// Default: 30px
+$gutter-width: 30px !default;
+
+// Default: "container"
+$container-namespace: "container" !default;
+
+// Default: "grid"
+$grid-namespace: "grid" !default;
+
+// Default: "col"
+$grid-column-namespace: "col" !default;
+
+// Default: (2, 3, 4, 5, 6, 8, 12)
+$col-groups: (2, 3, 4, 5, 6, 8, 12) !default;

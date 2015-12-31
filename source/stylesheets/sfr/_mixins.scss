@@ -1,0 +1,80 @@
+//
+// CSS Socks — Mixins
+// ©2014, Corey Ward
+//
+
+// +++ Default Configuration
+
+$baseline: 20px !default;
+
+// --- Default Configuration
+
+@function base($n, $round: false) {
+  $result: $n * $baseline;
+
+  @if $round == "up" {
+    $result: ceil($result)
+  } @else if $round == "down" {
+    $result: floor($result)
+  }
+
+  @return $result;
+}
+
+// Media Queries
+@mixin mobile($breakpoint: $mobile-breakpoint) {
+  @media screen and (max-width: $breakpoint) { @content; }
+}
+
+@mixin desktop($breakpoint: $mobile-breakpoint + 1) {
+  @media screen and (min-width: $breakpoint) { @content; }
+}
+
+@mixin desktop-large($breakpoint: $container-max-width) {
+  @media screen and (min-width: $breakpoint) { @content; }
+}
+
+// We have a few interesting cases where large desktops and mobile devices
+// should be seeing the same styles:
+@mixin extremes($min: $mobile-breakpoint, $max: $container-max-width) {
+  @media screen and (min-width: $max), screen and (max-width: $min) { @content; }
+}
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+@function rem-calc($pixels) {
+  @return #{$pixels / 16}rem;
+}
+
+@function lh($font-size, $baseline-multiplier) {
+  @return strip-units($baseline) * $baseline-multiplier / strip-units($font-size);
+}
+
+@function auto-line-height($font-size) {
+  @return round(strip-units($font-size) * strip-units($base-line-height) / strip-units($baseline));
+}
+
+@function color-palette($color) {
+  @return (
+    mix($color, black, 20%)
+    mix($color, black, 40%)
+    mix($color, black, 60%)
+    mix($color, black, 80%)
+    $color
+    mix($color, white, 80%)
+    mix($color, white, 60%)
+    mix($color, white, 40%)
+    mix($color, white, 20%)
+  );
+}
+
+@mixin highlight($color, $size: 3px) {
+  background-color: $color;
+  box-shadow: 0 0 0 $size $color;
+}
