@@ -35,14 +35,17 @@ article {
   background: image-url("article-line-art.svg");
   background-repeat: no-repeat;
   background-position: center 20px;
+  background-size: auto 98%;
   font-size: rem-calc(24);
   padding-bottom: 150px;
   border-bottom: 20px solid #B744B8;
 
   .container {
     background: #fff;
-    border-left: 70px solid transparent;
-    border-right: 70px solid transparent;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    padding-left: 40px;
+    padding-right: 40px;
     -webkit-background-clip: padding-box;
   }
 
