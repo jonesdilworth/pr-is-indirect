@@ -1,0 +1,42 @@
+//
+// CSS Socks — Base Styles
+// ©2014, Corey Ward
+//
+
+::-moz-selection {
+  background-color: transparentize($primary-color, .5);
+}
+
+::selection {
+  background-color: transparentize($primary-color, .5);
+}
+
+body {
+  // Typography
+  font-family: $font-family;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  line-height: 1.4;
+}
+
+a {
+  color: #4A90E2;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.center-text {
+  text-align: center;
+}
