@@ -86,6 +86,7 @@ article {
   }
 
   @include mobile(700px) {
+    background: none;
     font-size: rem-calc(20);
 
     .container {
@@ -108,7 +109,6 @@ article {
       border-right: 10px solid transparent;
       padding-left: 20px;
       padding-right: 20px;
-      background: rgba(#fff, 0.85);
     }
 
     p.strong {
