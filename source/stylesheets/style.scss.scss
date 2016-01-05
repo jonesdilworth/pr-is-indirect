@@ -45,6 +45,10 @@
       font-size: 55px;
     }
   }
+
+  @include desktop(1800px) {
+    background-position: 460px 50%, center center;
+  }
 }
 
 article {
